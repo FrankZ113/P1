@@ -2,16 +2,22 @@
 
     requirejs.config({
        
-        baseUrl: 'js/',
+        
         paths: {
-            script:'./modules/script',
-            alerter:'./modules/alerter',
-            jquery:'./libs/jquery-3.3.1'
+            shoiwAds:'js/modules/showAds',
+            pic:'js/modules/pic',
+            swiper:'Swiper/dist/js/swiper'
+         },
+        shim:{
+            swiper:{
+                deps:[],
+                exports:'swiper'
+            }
         }
     });
+    
+   requirejs(['showAds'],function(showAds){
 
-   requirejs(['alerter'],function(alerter){
-       alerter.showMsg();
    })
 
-})()
+})();
