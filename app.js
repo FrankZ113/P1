@@ -4,7 +4,7 @@
        
         baseUrl:'js/',
         paths: {
-            update:'./modules/update',
+            //update:'./modules/update',
             watch:'./modules/watch',
             swiper:'./libs/swiper'
          },
@@ -16,13 +16,20 @@
         }
     });
     
-   requirejs(['swiper','update','watch'],function(swiper,updateDateTime,watchData){
-    let date = undefined;
-    let time = undefined;
-    let data = {};
-    let swiperItems = [];
-    update.updateDateTime();
-    watch.watchData();
+   requirejs(['swiper','watch'],function(swiper,updateDateTime,watchData){
+    function adsData(data, time) {
+        let updateTime = time || 5000;
+        this.data = data;
+        this.update.updateDateTime();
+        this.watchData();
+        setInterval(() => {
+          this.updateDateTime();
+          this.watchData();
+        }, updateTime);
+        return this.swiperItems;
+      }
+    //update.updateDateTime();
+    //watch.watchData();
    })
 
 })();
