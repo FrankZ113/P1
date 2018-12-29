@@ -2,11 +2,11 @@
 
     requirejs.config({
        
-        
+        baseUrl:'js/',
         paths: {
-            shoiwAds:'js/modules/showAds',
-            pic:'js/modules/pic',
-            swiper:'Swiper/dist/js/swiper'
+            update:'./modules/update',
+            watch:'./modules/watch',
+            swiper:'./libs/swiper'
          },
         shim:{
             swiper:{
@@ -16,8 +16,13 @@
         }
     });
     
-   requirejs(['showAds'],function(showAds){
-
+   requirejs(['swiper','update','watch'],function(swiper,updateDateTime,watchData){
+    let date = undefined;
+    let time = undefined;
+    let data = {};
+    let swiperItems = [];
+    update.updateDateTime();
+    watch.watchData();
    })
 
 })();
