@@ -1,14 +1,14 @@
 (function(){
 
-    requirejs.config({
+    requirejs.config({ //配置基本路径
        
         baseUrl:'js/',
         paths: {
-            //update:'./modules/update',
+            update:'./modules/update',
             watch:'./modules/watch',
             swiper:'Swiper/dist/js/swiper'
          },
-        shim:{
+        shim:{ //引入非AMD模块化规范的js源文件
             swiper:{
                 deps:[],
                 exports:'swiper'
@@ -16,7 +16,7 @@
         }
     });
     
-   requirejs(['swiper','watch'],function(Swiper,watch){
+   requirejs(['watch','update'],function(watch,update){
     function adsData(data, time) {
         var updateTime = time || 5000;
         this.data = data;
