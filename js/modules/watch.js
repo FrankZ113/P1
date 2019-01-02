@@ -1,4 +1,5 @@
 define(['update'],function(update){
+    console.log("Start watch");
    var data = {};
    var swiperItems = [];
   function watchData() {

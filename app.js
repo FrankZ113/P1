@@ -18,6 +18,7 @@
     
    requirejs(['watch','update'],function(watch,update){
     function adsData(data, time) {
+        console.log("Start Main");
         var updateTime = time || 5000;
         this.data = data;
         update.updateDateTime();

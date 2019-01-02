@@ -1,4 +1,5 @@
 define(function(){
+    console.log("Start update");
     var date = undefined;
     var time = undefined;
     function updateDateTime() {
