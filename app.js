@@ -16,15 +16,15 @@
         }
     });
     
-   requirejs(['swiper','watch'],function(swiper,updateDateTime,watchData){
+   requirejs(['swiper','watch'],function(Swiper,watch){
     function adsData(data, time) {
-        let updateTime = time || 5000;
+        var updateTime = time || 5000;
         this.data = data;
-        this.update.updateDateTime();
-        this.watchData();
+        update.updateDateTime();
+        watch.watchData();
         setInterval(() => {
-          this.updateDateTime();
-          this.watchData();
+          update.updateDateTime();
+          watch.watchData();
         }, updateTime);
         return this.swiperItems;
       }
