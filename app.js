@@ -6,7 +6,7 @@
         paths: {
             //update:'./modules/update',
             watch:'./modules/watch',
-            swiper:'./libs/swiper'
+            swiper:'Swiper/dist/js/swiper'
          },
         shim:{
             swiper:{
